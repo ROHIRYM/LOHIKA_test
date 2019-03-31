@@ -1,0 +1,1 @@
+LOHIKA Scala Camp Test task
