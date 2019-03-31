@@ -10,10 +10,11 @@ object Main extends App {
     } else {
         val listOfCsvFiles = getListOfCsvFiles(args(1))
         if (listOfCsvFiles.isEmpty) {
-            println("=== No .csv files found ===")
+            println("No .csv files found")
         } else {
-            println("=== Found .csv files ===")
-            listOfCsvFiles.foreach{(f: File) => println(f.getName)}
+            println("Processing START")
+            processAllCsvFiles(listOfCsvFiles)
+            println("Processing FINISH")
         }
     }
 
@@ -23,6 +24,13 @@ object Main extends App {
             d.listFiles.filter(_.isFile).toList.filter(_.getName.endsWith(".csv"))
         } else {
             List[File]()
+        }
+    }
+
+    def processAllCsvFiles(files: List[File]) {
+        files.foreach{(f: File) => 
+            println("Processing " + f.getName + " ...")
+            
         }
     }
 }
