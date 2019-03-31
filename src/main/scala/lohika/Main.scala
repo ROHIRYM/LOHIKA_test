@@ -1,5 +1,11 @@
 package lohika
 
 object Main extends App {
-    println("Hello")
+    val areArgsValid = args.length == 2 && args(0) == "-d"
+
+    if (!areArgsValid) {
+        println("Invalid arguments")
+    } else {
+        
+    }
 }
