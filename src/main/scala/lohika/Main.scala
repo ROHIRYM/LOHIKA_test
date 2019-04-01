@@ -35,7 +35,7 @@ object Main extends App {
             val currentFileCrimes = reader.allWithHeaders()
             reader.close()
 
-            currentFileCrimes.filter(oneRow => oneRow.get("Crime ID") != null && !oneRow.get("Crime ID").isEmpty)
+            currentFileCrimes.filter(oneRow => oneRow.get("Crime ID") != null && !oneRow.get("Crime ID").get.isEmpty)
         }
 
         val crimesGroupedByCoordinates = filesCrimes.flatten
